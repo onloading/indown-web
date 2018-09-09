@@ -1,48 +1,54 @@
 <template>
-    <Row>
-        <Col span="12">
-        <div>
-            <Icon type="ios-american-football-outline" />
-        </div>
-        </Col>
-        <Col span="8">
-        <Menu mode="horizontal"
-            theme="dark"
-            active-name="1">
-            <div class="layout-logo"></div>
-            <div class="layout-nav">
-                <MenuItem name="1">
-                <Icon type="ios-navigate"></Icon>
-                首页
-                </MenuItem>
-                <MenuItem name="2">
-                <Icon type="ios-keypad"></Icon>
-                分类
-                </MenuItem>
-                <MenuItem name="3">
-                <Icon type="ios-analytics"></Icon>
-                教程
-                </MenuItem>
-                <MenuItem name="4">
-                <Icon type="ios-paper"></Icon>
-                其他
-                </MenuItem>
-            </div>
-        </Menu>
-        </Col>
-        <Col span="4">
-        <Select v-model="model13"
-            filterable
-            remote
-            :remote-method="remoteMethod1"
-            :loading="loading1"
-            placeholder="搜索组件...">
-            <Option v-for="(option, index) in options1"
-                :value="option.value"
-                :key="index">{{option.label}}</Option>
-        </Select>
-        </Col>
-    </Row>
+  <Row>
+    <Col span="2">
+    <div class="logoDiv">
+      <img style="width:60px; height: 60px;"
+        src="../assets/logo.png" />
+    </div>
+    </Col>
+    <Col span="10">
+    <div class="title-h3">
+      InDown
+    </div>
+    </Col>
+    <Col span="8">
+    <Menu mode="horizontal"
+      theme="dark"
+      active-name="1">
+      <div class="layout-logo"></div>
+      <div class="layout-nav">
+        <MenuItem name="1">
+        <Icon type="ios-navigate"></Icon>
+        首页
+        </MenuItem>
+        <MenuItem name="2">
+        <Icon type="ios-keypad"></Icon>
+        分类
+        </MenuItem>
+        <MenuItem name="3">
+        <Icon type="ios-analytics"></Icon>
+        教程
+        </MenuItem>
+        <MenuItem name="4">
+        <Icon type="ios-paper"></Icon>
+        其他
+        </MenuItem>
+      </div>
+    </Menu>
+    </Col>
+    <Col span="4">
+    <Select v-model="model13"
+      filterable
+      remote
+      :remote-method="remoteMethod1"
+      :loading="loading1"
+      placeholder="搜索组件...">
+      <Option v-for="(option, index) in options1"
+        :value="option.value"
+        :key="index">{{option.label}}</Option>
+    </Select>
+    </Col>
+  </Row>
 
 </template>
 <script>
@@ -137,3 +143,11 @@ export default {
   }
 }
 </script>
+<style>
+.title-h3 {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+  color: #ffffff;
+  font-size: 30px;
+}
+</style>

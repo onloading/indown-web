@@ -1,3 +1,28 @@
+<template>
+  <div class="layout">
+    <Layout>
+      <Header>
+        <InHeader></InHeader>
+      </Header>
+      <Content>
+        <Home></Home>
+      </Content>
+      <Footer class="layout-footer-center">&copy;2018 onloading.cn</Footer>
+    </Layout>
+  </div>
+</template>
+<script>
+import InHeader from './components/InHeader'
+import Home from './pages/Home'
+
+export default {
+  name: 'app',
+  data: function() {
+    return {}
+  },
+  components: { InHeader, Home }
+}
+</script>
 <style scoped>
 .layout {
   border: 1px solid #d7dde4;
@@ -21,49 +46,11 @@
   margin: 0 auto;
   margin-right: 20px;
 }
-</style>
-<template>
-  <div class="layout">
-    <Layout>
-      <Header>
-        <InHeader></InHeader>
-      </Header>
-      <Layout>
-        <Sider hide-trigger
-          :style="{background: '#fff'}">
-          <InSider></InSider>
-        </Sider>
-        <Layout :style="{padding: '0 24px 24px'}">
-          <Breadcrumb :style="{margin: '24px 0'}">
-            <BreadcrumbItem>Home</BreadcrumbItem>
-            <BreadcrumbItem>Components</BreadcrumbItem>
-            <BreadcrumbItem>Layout</BreadcrumbItem>
-          </Breadcrumb>
-          <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
-            <Row>
-              <Col v-for="item in resources"
-                span="6">
-              <InCard :resource="item"></InCard>
-              </Col>
-            </Row>
-          </Content>
-        </Layout>
-      </Layout>
-    </Layout>
-  </div>
-</template>
-<script>
-import InHeader from './components/InHeader'
-import InSider from './components/InSider'
-import InCard from './components/InCard'
-
-export default {
-  name: 'app',
-  data: function() {
-    return {
-      resources: ['1', '2', '3', '4', '', '', '', '']
-    }
-  },
-  components: { InHeader, InSider, InCard }
+.ivu-layout-header {
+  padding-left: 20px;
+  padding-right: 10px;
 }
-</script>
+.layout-footer-center {
+  text-align: center;
+}
+</style>
